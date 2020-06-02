@@ -64,6 +64,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "xfce4-terminal", NULL };
 static const char *brightness_up[] = {"brightnessctl", "set", "10%+"};
 static const char *brightness_down[] = {"brightnessctl", "set", "10%-"};
+static const char *volume_up[] = {"amixer", "-q", "set", "Master,0", "5%+", "unmute"};
+static const char *volume_down[] = {"amixer", "-q", "set", "Master,0", "5%-", "unmute"};
+static const char *volume_mute[] = {"amixer", "-q", "sset", "Master,0", "toggle"};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -94,6 +97,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period,             tagmon,         {.i = +1 } },
 	{ False,                        XF86XK_MonBrightnessUp,   spawn,          {.v = brightness_up } },
 	{ False,                        XF86XK_MonBrightnessDown, spawn,          {.v = brightness_down } },
+	{ False,                        XF86XK_AudioRaiseVolume,  spawn,          {.v = volume_up } },
+	{ False,                        XF86XK_AudioLowerVolume,  spawn,          {.v = volume_down } },
+	{ False,                        XF86XK_AudioMute,         spawn,          {.v = volume_mute } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
