@@ -92,8 +92,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period,             focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,              tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,             tagmon,         {.i = +1 } },
-	{ False,                        XF86MonBrightnessUp,   spawn,          {.v = brightness_up } },
-	{ False,                        XF86MonBrightnessDown, spawn,          {.v = brightness_down } },
+	{ False,                        XF86XK_MonBrightnessUp,   spawn,          {.v = brightness_up } },
+	{ False,                        XF86XK_MonBrightnessDown, spawn,          {.v = brightness_down } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
